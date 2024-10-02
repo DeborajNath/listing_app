@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_listing_app/screens/listing_page.dart';
+import 'package:flutter_listing_app/constants/dimensions.dart';
+import 'package:flutter_listing_app/screens/homepage.dart';
+import 'package:gap/gap.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -16,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => const ListingPage(),
+          builder: (context) => const Homepage(),
         ),
       );
     });
@@ -26,7 +28,22 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Image.asset("assets/logo/flutter logo.png"),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              "assets/logo/logo 2.png",
+              height: 100 * Dimensions.heightF(context),
+              width: 150 * Dimensions.widthP(context),
+              fit: BoxFit.cover,
+            ),
+            Gap(40),
+            Text(
+              "Girman Technologies",
+              style: TextStyle(fontSize: 40, fontWeight: FontWeight.w900),
+            )
+          ],
+        ),
       ),
     );
   }

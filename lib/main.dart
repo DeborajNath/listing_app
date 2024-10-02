@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_listing_app/firebase_options.dart';
-import 'package:flutter_listing_app/provider/user_list_provider.dart';
+import 'package:flutter_listing_app/provider/user_provider.dart';
 import 'package:flutter_listing_app/screens/splash_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -14,7 +14,7 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (context) => UserListProvider(),
+          create: (context) => UserProvider(),
         ),
       ],
       child: const MainApp(),
